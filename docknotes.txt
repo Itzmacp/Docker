@@ -1,32 +1,41 @@
-A Dockerfile is a plain text file that contains a sequential list of instructions and commands used to automatically build a Docker image. You can think of it as a "recipe" or blueprint for your application's environment, ensuring it runs identically across different machines. 
-GeeksforGeeks
-GeeksforGeek
- +3
+A Dockerfile is a plain text file that contains a sequential
+ list of instructions and commands used to automatically build a 
+ Docker image. You can think of it as a "recipe" or blueprint for 
+ your application's environment, ensuring it runs identically across 
+ different machines. 
+
+
 Key Functions
-Automated Image Creation: It replaces manual setup by codifying every step needed to assemble a container, from the operating system to specific app dependencies.
-Layered Architecture: Each command in a Dockerfile creates a new "layer" in the image. These layers are cached and reused to make subsequent builds faster.
-Infrastructure as Code: Because it is a text file, it can be version-controlled (e.g., via Git) alongside your application source code. 
-KodeKloud
-KodeKloud
- +4
+Automated Image Creation: It replaces manual setup by codifying every 
+step needed to assemble a container, from the operating system to 
+specific app dependencies.
+Layered Architecture: Each command in a Dockerfile creates a new "layer" 
+in the image. These layers are cached and reused to make subsequent 
+builds faster.
+Infrastructure as Code: Because it is a text file, it can be 
+version-controlled (e.g., via Git) alongside your application 
+source code. 
+
+
 Common Instructions
 A Dockerfile typically uses a specific syntax with uppercase keywords: 
 Docker Docs
 Docker Docs
- +1
+ 
 FROM: Sets the base image (e.g., FROM node:20) to build upon.
 WORKDIR: Sets the default directory for all subsequent instructions.
-COPY / ADD: Transfers files from your local machine into the image filesystem.
-RUN: Executes commands (like apt-get install) during the build process to install software.
+COPY / ADD: Transfers files from your local machine into the 
+image filesystem.
+RUN: Executes commands (like apt-get install) during the build
+ process to install software.
 EXPOSE: Documents which network ports the container will listen on.
-CMD: Defines the default command that runs when a container starts (e.g., npm start). 
-CloudBees
-CloudBees
- +5
+CMD: Defines the default command that runs when a container starts
+ (e.g., npm start). 
+
+
 The Build Workflow
 Write: You create a text file named exactly Dockerfile (no extension).
-Build: You run docker build -t my-app . in your terminal. Docker reads the file and creates an Image.
-Run: You run docker run my-app to start a Container, which is a live, running instance of that image. 
-Docker Docs
-Docker Docs
- +4
+Build: You run docker build -t my-app . in your terminal. Docker reads the 
+file and creates an Image.
+Run: You run docker run my-app to start a Container, 
+which is a live, running instance of that image. 
