@@ -1,0 +1,10 @@
+version: '3'
+services:
+  sample1:
+    image: httpd
+    ports:
+    - "5000:5000"
+  nginxapp01:
+    image: nginxapp:v2
+    ports:
+    - "8086:80"
