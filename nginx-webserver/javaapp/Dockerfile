@@ -1,14 +1,12 @@
-FROM eclipse-temurin:25
+FROM openjdk:19-ea-alpine3.15
 
-LABEL maintainer ="Mac"
-LABEL version ="1.0"
+WORKDIR /usr/src/app
 
-RUN mkdir /usr/src/app/
+# Copy the newly named file
+COPY . .
 
-WORKDIR /usr/src/app/
+# Compile using the correct filename
+RUN javac CurrentDateTime.java
 
-COPY japp.jar /usr/src/app/
-
-RUN javac japp.jar
-
-CMD ["java", "-jar", "/usr/src/app/japp.jar"]
+# Run using the class name
+CMD ["java", "CurrentDateTime"]
