@@ -1,0 +1,12 @@
+# Stage 1: Builder
+FROM python:3.11-slim as builder
+WORKDIR /src
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+COPY . .
+# The project runs from this stage based on your 'target: builder' instruction
+CMD ["python", "server.py"]
+
+# Stage 2: Final (Optional, but included for completeness)
+FROM builder as final
+CMD ["python", "server.py"]
